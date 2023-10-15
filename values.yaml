@@ -1,0 +1,16 @@
+domain: pgweb.chalam-kitchen.com
+
+postgresql:
+  enabled: true
+  fullnameOverride: postgresql
+  auth:
+    database: demo
+    username: user1
+    password: demo12345 # Just demo, we SHOULD not hard code the secret here
+    postgresPassword: superadminpassword #postgres
+
+pgweb:
+  enabled: true
+  nameOverride: pgweb
+  ingress:
+    enabled: false
