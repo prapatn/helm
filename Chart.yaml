@@ -16,8 +16,8 @@ dependencies:
     repository: "https://charts.bitnami.com/bitnami"
     version: "13.1.5"
 
-  - name: "pgweb"
-    alias: pgweb
-    condition: pgweb.enabled
-    repository: "https://charts.ectobit.com"
-    version: "0.1.9"
+#  - name: "pgweb"
+#    alias: pgweb
+#    condition: pgweb.enabled
+#    repository: "https://charts.ectobit.com"
+#    version: "0.1.9"
