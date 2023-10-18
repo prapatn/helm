@@ -5,7 +5,7 @@ postgresql:
   fullnameOverride: postgresql
   auth:
     database: demo
-    username: user1
+    username: user2
     password: demo12345 # Just demo, we SHOULD not hard code the secret here
     postgresPassword: superadminpassword #postgres
 
