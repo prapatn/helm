@@ -9,8 +9,8 @@ postgresql:
     password: demo12345 # Just demo, we SHOULD not hard code the secret here
     postgresPassword: superadminpassword #postgres
 
-#pgweb:
-#  enabled: true
-#  nameOverride: pgweb
-#  ingress:
-#    enabled: false
+pgweb:
+  enabled: true
+  nameOverride: pgweb
+  ingress:
+    enabled: false
