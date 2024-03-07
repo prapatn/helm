@@ -1,0 +1,5 @@
+namespace: prod
+
+myconfigmap:
+  data:
+    CUSTOM_HEADER: 'Welcome To Prod'
