@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: client
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      name: client-pods
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: client
+          image: "{{ .Values.server.image.name }}:{{ .Values.server.image.tag }}"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  client-service
+spec:
+  selector:
+    app:  client
+  type: ClusterIP
+  ports:
+  - port:  80
+    targetPort:  80
