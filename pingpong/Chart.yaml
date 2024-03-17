@@ -1,0 +1,23 @@
+apiVersion: v2
+name: pingpong
+description: A Helm chart for pingpong
+type: application
+
+version: 1.0.0
+
+appVersion: "1.0"
+
+dependencies:
+  ### MariaDB ###
+  # helm install mariadb bitnami/mariadb --set auth.rootPassword=password --set auth.database=pingpong --set auth.username=example --set auth.password=password -n pingpong
+  - name: "mariadb"
+    repository: "https://charts.bitnami.com/bitnami"
+    version: "16.5.0"
+
+
+  ### Redis ###
+  - name: "redis"
+    alias: redis
+    condition: redis.enabled
+    repository: "https://charts.bitnami.com/bitnami"
+    version: "18.19.2"
