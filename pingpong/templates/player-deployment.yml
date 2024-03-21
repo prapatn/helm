@@ -5,7 +5,7 @@ metadata:
   labels:
     app: player
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: player
@@ -22,15 +22,15 @@ spec:
           - containerPort: 8888
           env:
           - name: MYSQL_HOST
-            value: "pingpong-mariadb:3306"
+            value: "34.142.171.204:3306"
           - name: TABLE_URL
             value: "http://table-service:8889"
           - name: REDIS_HOST
-            value: "pingpong-redis-master:6379"
+            value: "10.5.60.147:6379"
           - name: MYSQL_PASSWORD
             value: "password"
           - name: MYSQL_USERNAME
-            value: "root"
+            value: "example"
           - name: MYSQL_DATABASE
             value: "pingpong"
 ---
