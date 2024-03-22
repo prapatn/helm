@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: player
-          image: prapatkiingz/boilerplate-pingpong-player:latest
+          image: gcr.io/project-tutorial-413803/boilerplate-pingpong-player:main
           ports:
           - containerPort: 8888
           env:
