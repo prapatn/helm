@@ -1,0 +1,11 @@
+namespace: todo
+
+client:
+  image:
+    name: dekcode/todo-app
+    tag: v4
+
+server:
+  image:
+    name: dekcode/todo-api
+    tag: v5

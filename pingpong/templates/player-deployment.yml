@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: player-deployment
+  labels:
+    app: player
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: player
+  template:
+    metadata:
+      name: player-pods
+      labels:
+        app: player
+    spec:
+      containers:
+        - name: player
+          image: gcr.io/project-tutorial-413803/boilerplate-pingpong-player:latest
+          ports:
+          - containerPort: 8888
+          env:
+          - name: MYSQL_HOST
+            value: "34.142.171.204:3306"
+          - name: TABLE_URL
+            value: "http://table-service:8889"
+          - name: REDIS_HOST
+            value: "10.5.60.147:6379"
+          - name: MYSQL_PASSWORD
+            value: "password"
+          - name: MYSQL_USERNAME
+            value: "example"
+          - name: MYSQL_DATABASE
+            value: "pingpong"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  player-service
+spec:
+  selector:
+    app:  player
+  type: ClusterIP
+  ports:
+  - port:  8888
+    targetPort:  8888
